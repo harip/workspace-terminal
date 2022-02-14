@@ -58,4 +58,4 @@ export function terminalOptions(folder: vscode.WorkspaceFolder, terminalText? : 
         name: folder.name
     };    
     return Object.assign(options, terminalText ? { message: terminalText } : null);
-}
+} 

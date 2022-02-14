@@ -29,6 +29,27 @@ export async function openTerminalsWithCommand() {
     }
 }
 
+export async function runCommand() {
+    try {
+        if (!ensureTerminalExists()) {
+            return;
+        }
+        const result = await window.showInputBox({
+            value: 'npm run start',
+            placeHolder: 'For example: npm run start or npm i && npm run start',
+        });
+
+        const terminals = <vscode.Terminal[]>(<any>vscode.window).terminals;
+        terminals.forEach(terminal => {
+            if (terminal && result) {
+                terminal.sendText(result);
+            }
+        }); 
+    } catch (e) {
+        console.warn(`failed to run command on open terminals`, e);
+    }
+}
+
 export function closeAllTerminals() {
     try {
         if (ensureTerminalExists()) {

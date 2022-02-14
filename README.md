@@ -19,6 +19,10 @@ Enter the command that needs to be run after terminal opens. For example `npm ru
 
 <br/> 
 
+#### `Run command on open terminals:` Run same command on all open terminals.
+
+<br/> 
+
 ### `Close all:` Close all the terminals.
 ![](closeAll.gif)
 

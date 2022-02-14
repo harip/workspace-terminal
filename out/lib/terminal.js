@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.closeAllTerminals = exports.openTerminalsWithCommand = exports.openTerminals = void 0;
+exports.closeAllTerminals = exports.runCommand = exports.openTerminalsWithCommand = exports.openTerminals = void 0;
 const vscode = require("vscode");
 const vscode_1 = require("vscode");
 const terminal_helper_1 = require("./terminal-helper");
@@ -33,6 +33,27 @@ async function openTerminalsWithCommand() {
     }
 }
 exports.openTerminalsWithCommand = openTerminalsWithCommand;
+async function runCommand() {
+    try {
+        if (!(0, terminal_helper_1.ensureTerminalExists)()) {
+            return;
+        }
+        const result = await vscode_1.window.showInputBox({
+            value: 'npm run start',
+            placeHolder: 'For example: npm run start or npm i && npm run start',
+        });
+        const terminals = vscode.window.terminals;
+        terminals.forEach(terminal => {
+            if (terminal && result) {
+                terminal.sendText(result);
+            }
+        });
+    }
+    catch (e) {
+        console.warn(`failed to run command on open terminals`, e);
+    }
+}
+exports.runCommand = runCommand;
 function closeAllTerminals() {
     try {
         if ((0, terminal_helper_1.ensureTerminalExists)()) {

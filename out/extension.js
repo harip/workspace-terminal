@@ -14,6 +14,9 @@ function activate(context) {
     context.subscriptions.push(vscode.commands.registerCommand('workspaceTerminal.openWithCommand', async () => {
         await (0, terminal_1.openTerminalsWithCommand)();
     }));
+    context.subscriptions.push(vscode.commands.registerCommand('workspaceTerminal.runCommand', async () => {
+        await (0, terminal_1.runCommand)();
+    }));
     context.subscriptions.push(vscode.commands.registerCommand('workspaceTerminal.closeAllTerminals', () => {
         (0, terminal_1.closeAllTerminals)();
     }));
