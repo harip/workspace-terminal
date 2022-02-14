@@ -21,9 +21,9 @@ exports.selectTerminal = selectTerminal;
 /**
  * Source: https://github.com/microsoft/vscode-extension-samples/tree/ac9bbf2e743ff0a25ebc82095c77b7c0a0fb4914/terminal-sample
  */
-function ensureTerminalExists() {
+function ensureTerminalExists(message) {
     if (vscode.window.terminals.length === 0) {
-        vscode.window.showErrorMessage('No active terminals');
+        vscode.window.showErrorMessage(message ? message : 'No active terminals');
         return false;
     }
     return true;

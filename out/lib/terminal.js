@@ -35,12 +35,12 @@ async function openTerminalsWithCommand() {
 exports.openTerminalsWithCommand = openTerminalsWithCommand;
 async function runCommand() {
     try {
-        if (!(0, terminal_helper_1.ensureTerminalExists)()) {
+        if (!(0, terminal_helper_1.ensureTerminalExists)('No open terminals found')) {
             return;
         }
         const result = await vscode_1.window.showInputBox({
-            value: 'npm run start',
-            placeHolder: 'For example: npm run start or npm i && npm run start',
+            value: 'npm run test',
+            placeHolder: 'For example: npm run rebuild && npm run test',
         });
         const terminals = vscode.window.terminals;
         terminals.forEach(terminal => {
