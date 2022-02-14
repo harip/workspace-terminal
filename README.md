@@ -1,6 +1,6 @@
 # workspace-terminal
 
-Open terminals for all folders in workspace. 
+Open terminals automatically for all folders in workspace. Terminals can also be opened with a command. 
 
 <br/> 
 
