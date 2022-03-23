@@ -10,8 +10,14 @@
 		"terminal",
 		"run command",
 		"run command in workspace",
+		"run command in open terminal",
+		"run command in open terminals",
+		"run command file in workspace",
+		"run command file workspace",
+		"run command file open terminal",
+		"run command file open terminals",
 		"command"
-	],
+	], 
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/harip/workspace-terminal.git"
@@ -45,6 +51,10 @@
 			{
 				"command": "workspaceTerminal.runCommand",
 				"title": "Run command on open terminals"
+			},			
+			{
+				"command": "workspaceTerminal.runFile",
+				"title": "Run command file on open terminals"
 			},
 			{
 				"command": "workspaceTerminal.closeAllTerminals",
@@ -68,6 +78,10 @@
 				},
 				{
 					"command": "workspaceTerminal.runCommand",
+					"group": "1_ws_group_2"
+				},
+				{
+					"command": "workspaceTerminal.runFile",
 					"group": "1_ws_group_2"
 				},
 				{
@@ -95,7 +109,7 @@
 		"@types/glob": "^7.1.4",
 		"@types/mocha": "^9.1.0",
 		"@types/node": "^14.18.11",
-		"@types/vscode": "^1.64.0",
+		"@types/vscode": "^1.62.0",
 		"@typescript-eslint/eslint-plugin": "^5.11.0",
 		"@typescript-eslint/parser": "^5.11.0",
 		"@vscode/test-electron": "^1.6.2",

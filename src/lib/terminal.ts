@@ -64,3 +64,10 @@ export function closeAllTerminals() {
         console.warn(`failed to close terminals`, e);
     }
 }
+
+export async function runFile() {
+    try { 
+    } catch (e) {
+        console.warn(`failed to run command on open terminals`, e);
+    }
+}
